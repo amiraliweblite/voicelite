@@ -64,7 +64,10 @@
       var connectedUser
 
       //connecting to our signaling server
-      var conn = new WebSocket('ws://shielded-citadel-28380.herokuapp.com:8080')
+      var HOST = location.origin.replace(/^http/, 'ws')
+      var wsAddress = new WebSocket(HOST)
+      console.log(wsAddress)
+      var conn = new WebSocket(wsAddress)
 
       conn.onopen = function () {
          console.log("Connected to the signaling server")
