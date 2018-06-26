@@ -4,7 +4,9 @@ const express = require('express')
 const SocketServer = require('ws').Server
 const path = require('path')
 
-const PORT = process.env.PORT || 3000
+const users = {}
+
+const PORT = process.env.PORT || 8080
 const INDEX = path.join(__dirname, 'index.html')
 
 const server = express()
@@ -13,12 +15,6 @@ const server = express()
 
 const wss = new SocketServer({ server })
 
-// wss.on('connection', (ws) => {
-//   console.log('Client connected')
-//   ws.on('close', () => console.log('Client disconnected'))
-// })
-
-const users = {}
 
 wss.on('connection', function(connection) {
 
