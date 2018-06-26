@@ -67,7 +67,7 @@
       var HOST = location.origin.replace(/^http/, 'ws')
       var wsAddress = new WebSocket(HOST)
       console.log(wsAddress)
-      var conn = new WebSocket(wsAddress)
+      var conn = new WebSocket(wsAddress).url
 
       conn.onopen = function () {
          console.log("Connected to the signaling server")
