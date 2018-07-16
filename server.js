@@ -33,7 +33,6 @@ wss.on('connection', function(connection) {
 
       switch (data.type) {
          case 'login': {
-           console.log(data)
            users = R.assocPath([data.wisId, data.name], connection, users)
            // users[data.wisId][data.name] = connection
            connection.name = data.name
@@ -66,7 +65,7 @@ wss.on('connection', function(connection) {
          }
 
          case 'offer': {
-           const conn = R.path(data.wisId, data.name)(users)
+           const conn = R.path([data.wisId, data.name])(users)
            // users[data.wisId][data.name]
 
            if(conn != null) {
@@ -83,7 +82,7 @@ wss.on('connection', function(connection) {
          }
 
          case 'answer': {
-           const conn = R.path(data.wisId, data.name)(users)
+           const conn = R.path(d[ata.wisId, data.name])(users)
            // users[data.wisId][data.name]
 
            if(conn != null) {
@@ -98,7 +97,7 @@ wss.on('connection', function(connection) {
          }
 
          case 'candidate': {
-           const conn = R.path(data.wisId, data.name)(users)
+           const conn = R.path([data.wisId, data.name])(users)
            // users[data.wisId][data.name]
 
            if(conn != null) {
@@ -112,7 +111,7 @@ wss.on('connection', function(connection) {
          }
 
          case 'leave': {
-           const conn = R.path(data.wisId, data.name)(users)
+           const conn = R.path([data.wisId, data.name])(users)
            // users[data.wisId][data.name]
            conn.otherName = null
 
