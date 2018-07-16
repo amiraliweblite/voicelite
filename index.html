@@ -46,7 +46,7 @@
             </div>
 
          </div>
-         
+
          <br>
          <select id = 'userSelcetor'></select>
          <br>
@@ -210,7 +210,8 @@
 
       //initiating a call
       callBtn.addEventListener('click', function () {
-         var callToUsername = callToUsernameInput.value
+         // var callToUsername = callToUsernameInput.value
+         var callToUsername = userSelcetor.value
 
          if (callToUsername.length > 0) {
             connectedUser = callToUsername
