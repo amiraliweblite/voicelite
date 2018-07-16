@@ -32,6 +32,7 @@ wss.on('connection', function(connection) {
 
       switch (data.type) {
          case 'login': {
+           console.log(log)
            users[data.wisId][data.name] = connection
            connection.name = data.name
 
