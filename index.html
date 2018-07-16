@@ -164,9 +164,6 @@
             navigator.webkitGetUserMedia({ video: false, audio: true }, function (myStream) {
                stream = myStream
 
-               //displaying local audio stream on the page
-               // localAudio.src = window.URL.createObjectURL(stream)
-
                //using Google public stun server
                var configuration = {
                   'iceServers': [{ 'url': 'stun:stun2.1.google.com:19302' }]
@@ -201,7 +198,6 @@
 
       //initiating a call
       callBtn.addEventListener('click', function () {
-         // var callToUsername = callToUsernameInput.value
          var callToUsername = userSelcetor.value
 
          if (callToUsername.length > 0) {
@@ -260,15 +256,6 @@
           userSelcetor.add(option)
         })
       }
-
-      //hang up
-      // hangUpBtn.addEventListener('click', function () {
-      //    send({
-      //       type: 'leave'
-      //    })
-      //
-      //    handleLeave()
-      // })
 
       function handleLeave() {
          connectedUser = null
