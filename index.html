@@ -132,10 +132,10 @@
       var loginBtn = document.querySelector('#loginBtn')
 
       var callPage = document.querySelector('#callPage')
-      var callToUsernameInput = document.querySelector('#callToUsernameInput')
+      // var callToUsernameInput = document.querySelector('#callToUsernameInput')
       var callBtn = document.querySelector('#callBtn')
 
-      var hangUpBtn = document.querySelector('#hangUpBtn')
+      // var hangUpBtn = document.querySelector('#hangUpBtn')
       // var localAudio = document.querySelector('#localAudio')
       var remoteAudio = document.querySelector('#remoteAudio')
       var userSelcetor = document.querySelector('#userSelcetor')
@@ -271,13 +271,13 @@
       }
 
       //hang up
-      hangUpBtn.addEventListener('click', function () {
-         send({
-            type: 'leave'
-         })
-
-         handleLeave()
-      })
+      // hangUpBtn.addEventListener('click', function () {
+      //    send({
+      //       type: 'leave'
+      //    })
+      //
+      //    handleLeave()
+      // })
 
       function handleLeave() {
          connectedUser = null
