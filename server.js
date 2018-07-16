@@ -5,7 +5,7 @@ const SocketServer = require('ws').Server
 const path = require('path')
 const R = require('ramda')
 
-const users = {}
+var users = {}
 
 const PORT = process.env.PORT || 8080
 const INDEX = path.join(__dirname, 'index.html')
