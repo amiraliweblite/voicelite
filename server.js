@@ -3,6 +3,7 @@
 const express = require('express')
 const SocketServer = require('ws').Server
 const path = require('path')
+const R = require('ramda')
 
 const users = {}
 
@@ -33,7 +34,8 @@ wss.on('connection', function(connection) {
       switch (data.type) {
          case 'login': {
            console.log(data)
-           users[data.wisId][data.name] = connection
+           users = R.assocPath([data.wisId, data.name], connection, users)
+           // users[data.wisId][data.name] = connection
            connection.name = data.name
 
            sendTo(connection, {
@@ -64,7 +66,8 @@ wss.on('connection', function(connection) {
          }
 
          case 'offer': {
-           const conn = users[data.wisId][data.name]
+           const conn = R.path(data.wisId, data.name)(users)
+           // users[data.wisId][data.name]
 
            if(conn != null) {
               connection.otherName = data.name
@@ -80,7 +83,8 @@ wss.on('connection', function(connection) {
          }
 
          case 'answer': {
-           const conn = users[data.wisId][data.name]
+           const conn = R.path(data.wisId, data.name)(users)
+           // users[data.wisId][data.name]
 
            if(conn != null) {
               connection.otherName = data.name
@@ -94,7 +98,8 @@ wss.on('connection', function(connection) {
          }
 
          case 'candidate': {
-           const conn = users[data.wisId][data.name]
+           const conn = R.path(data.wisId, data.name)(users)
+           // users[data.wisId][data.name]
 
            if(conn != null) {
               sendTo(conn, {
@@ -107,7 +112,8 @@ wss.on('connection', function(connection) {
          }
 
          case 'leave': {
-           const conn = users[data.wisId][data.name]
+           const conn = R.path(data.wisId, data.name)(users)
+           // users[data.wisId][data.name]
            conn.otherName = null
 
            if(conn != null) {
