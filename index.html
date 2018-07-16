@@ -31,9 +31,9 @@
 
       </div>
 
-      <select id = 'selcet'>
-       <option> Hello </option>
-      </select>
+      <br>
+      <select id = 'userSelcetor'></select>
+      <br>
 
       <div id = 'callPage' class = 'call-page'>
 
@@ -138,7 +138,9 @@
       var hangUpBtn = document.querySelector('#hangUpBtn')
       // var localAudio = document.querySelector('#localAudio')
       var remoteAudio = document.querySelector('#remoteAudio')
-      var select = document.querySelector('#select')
+      var userSelcetor = document.querySelector('#userSelcetor')
+
+      console.log(userSelcetor)
 
       var yourConn
       var stream
@@ -264,8 +266,8 @@
         const option = document.createElement('option')
         option.value = name
         option.text = name
-        console.log(option)
-        select.appendChild(option)
+        console.log(userSelcetor)
+        userSelcetor.appendChild(option)
       }
 
       //hang up
