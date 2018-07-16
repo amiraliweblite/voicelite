@@ -143,7 +143,9 @@ wss.on('connection', function(connection) {
          if(connection.otherName) {
 
             const conn = users[connection.otherName]
-            conn.otherName = null
+            if (conn) {
+              conn.otherName = null
+            }
 
             if(conn != null) {
                sendTo(conn, {
