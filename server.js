@@ -82,7 +82,7 @@ wss.on('connection', function(connection) {
          }
 
          case 'answer': {
-           const conn = R.path(d[ata.wisId, data.name])(users)
+           const conn = R.path([data.wisId, data.name])(users)
            // users[data.wisId][data.name]
 
            if(conn != null) {
