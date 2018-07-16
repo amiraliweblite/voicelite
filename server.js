@@ -40,12 +40,17 @@ wss.on('connection', function(connection) {
              success: true
            })
 
+           sendTo(connection, {
+             type: 'newUser',
+             name: Object.keys(users)
+           })
+
            // send data name to others
            Object.keys(users).forEach(function (name) {
              if (name !== data.name) {
                sendTo(users[name], {
                  type: 'newUser',
-                 name: data.name
+                 name: [data.name]
                })
              }
            })

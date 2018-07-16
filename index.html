@@ -261,11 +261,13 @@
       }
 
       // when new user came into chat
-      function handleNewUser(name) {
-        const option = document.createElement('option')
-        option.value = name
-        option.text = name
-        userSelcetor.add(option)
+      function handleNewUser(names) {
+        names.forEach(function (name) {
+          const option = document.createElement('option')
+          option.value = name
+          option.text = name
+          userSelcetor.add(option)
+        })
       }
 
       //hang up
