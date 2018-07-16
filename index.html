@@ -31,10 +31,6 @@
 
       </div>
 
-      <br>
-      <select id = 'userSelcetor'></select>
-      <br>
-
       <div id = 'callPage' class = 'call-page'>
 
          <div class = 'row'>
@@ -50,6 +46,10 @@
             </div>
 
          </div>
+         
+         <br>
+         <select id = 'userSelcetor'></select>
+         <br>
 
          <div class = 'row text-center'>
             <div class = 'col-md-12'>
@@ -139,8 +139,6 @@
       // var localAudio = document.querySelector('#localAudio')
       var remoteAudio = document.querySelector('#remoteAudio')
       var userSelcetor = document.querySelector('#userSelcetor')
-
-      console.log(userSelcetor)
 
       var yourConn
       var stream
@@ -266,7 +264,6 @@
         const option = document.createElement('option')
         option.value = name
         option.text = name
-        console.log(userSelcetor)
         userSelcetor.add(option)
       }
 
