@@ -42,7 +42,10 @@ wss.on('connection', function(connection) {
 
            sendTo(connection, {
              type: 'newUser',
-             name: Object.keys(users)
+             name: Object.keys(users).filter(function (name) {
+               if (name === data.name) return false
+               return true
+             })
            })
 
            // send data name to others
