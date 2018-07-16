@@ -42,8 +42,6 @@ wss.on('connection', function(connection) {
 
            // send data name to others
            Object.values(users).forEach(function (conn) {
-             console.log(conn)
-             console.log(name)
              sendTo(conn, {
                type: 'newUser',
                name: data.name
