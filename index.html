@@ -265,11 +265,10 @@
 
       // when new user came into chat
       function handleNewUser(name) {
-        if (!name) return
-        console.log(name)
         const option = document.createElement('option')
         option.value = name
         option.text = name
+        console.log(option)
         select.appendChild(option)
       }
 
