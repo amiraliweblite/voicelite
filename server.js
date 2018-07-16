@@ -80,7 +80,7 @@ wss.on('connection', function(connection) {
          case 'answer': {
            const conn = users[data.name]
 
-           if(conn != null && connection.otherName) {
+           if(conn != null) {
               connection.otherName = data.name
               sendTo(conn, {
                  type: 'answer',
