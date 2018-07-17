@@ -53,7 +53,7 @@ wss.on('connection', function(connection) {
 
            // send data name to others
            Object.keys(users[data.wisId]).forEach(function (name) {
-             if (name !== data.name) {
+             if (name !== data.name && R.path([data.wisId, name], users)) {
                sendTo(users[data.wisId][name], {
                  type: 'newUser',
                  name: [data.name]
